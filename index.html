@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>food.blog.com</title>
+    <style>
+      nav {
+        background-color: plum;
+      }
+
+      .navone {
+        color: white;
+      }
+
+      .navtwo {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="./index.html" class="navone">home</a>
+        <a href="../image.html" class="navone">about us</a>
+        <!-- <a href="./about.html">About us</a> -->
+        <!-- <a href="/html/GRTM/GRTM Academy/contact.html">contact us</a> -->
+        <a href="./contact.html" class="navone">contact us</a>
+        <a href="./signup.html" class="navone">sign-up</a><br />
+      </nav>
+
+      <nav>
+        <a href="./index.html" class="navtwo">event</a>
+        <a href="../image.html" class="navtwo">gallery</a>
+        <!-- <a href="./about.html">About us</a> -->
+        <!-- <a href="/html/GRTM/GRTM Academy/contact.html">contact us</a> -->
+        <a href="./shift.html" class="navtwo">blog</a> <br />
+      </nav>
+    </header>
+
+    <h1>My food blog:</h1>
+    <!-- <img src="https://foodish-api.herokuapp.com/images/burger" />
+    <img src="https://foodish-api.herokuapp.com/images/burger/15.jpg" /> -->
+
+    <a href="http://www.food.com">food.com</a>
+
+    <div>
+      <h1>my first blog</h1>
+      <p>we made a squid soup</p>
+      <!-- <img src="../../food4.jpg" /> -->
+    </div>
+
+    <div>
+      <h2>my second blog</h2>
+      <p>we made chicken and chips</p>
+      <!-- <img src="../../food5.jpg" /> -->
+    </div>
+
+    <div>
+      <h3>my third blog</h3>
+      <p>we made pasta</p>
+      <!-- <img src="../../food6.jpg" /> -->
+    </div>
+
+    <div>
+      <h4>my fourth blog</h4>
+      <p>we made mac and cheese</p>
+      <!-- <img src="../../food7.jpg" /> -->
+    </div>
+    <div id="result"></div>
+    <script>
+      function fetchImages() {
+        fetch(" https://api.imgflip.com/get_memes", {
+          method: "GET",
+        })
+          .then((data) => data.json())
+          .then((result) => {
+            result.data.memes.map((item) => (
+              <div>
+                <p>{item.id}</p>
+              </div>
+            ));
+          }, (document.getElementById("result").innerHTML = resource))
+          .catch((error) => console.log(error));
+      }
+      fetchImages();
+    </script>
+  </body>
+</html>
